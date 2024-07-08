@@ -1,3 +1,7 @@
+h2 {
+  text-align: center;
+}
+
 .pokemon-list {
   width: 80%;
   margin: 50px auto;
@@ -10,31 +14,38 @@
 }
 
 .pokemon-item {
-  padding: 20px; 
-  border: 2px solid #FF0000; 
-  border-radius: 15px; 
+  padding: 20px;
+  border: 2px solid #FF0000; /* Rojo representativo de Pokémon */
+  border-radius: 15px;
   text-align: center;
-  background-color: #FFF; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #FFF; /* Fondo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-name {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
 .pokemon-item button {
-  background-color: #3B4CCA; 
+  background-color: #3B4CCA; /* Azul representativo de Pokémon */
   color: white;
   border: none;
-  border-radius: 10px; 
-  padding: 10px 20px; 
+  border-radius: 10px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 16px; 
-  margin-top: 10px; 
+  font-size: 16px;
+  margin-top: 10px;
 }
 
 .pokemon-item button:hover {
-  background-color: #2a2d9f; 
+  background-color: #2a2d9f; /* Azul más oscuro */
 }
 
 .pokemon-details, .type-details, .selected-pokemon {
   margin-top: 20px;
+  margin-bottom: 80px; /* Añadir más margen para separar del footer */
 }
 
 img {
@@ -42,5 +53,24 @@ img {
   height: auto;
 }
 
+/* Grid para los tipos de Pokémon */
+.type-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+  margin-bottom: 80px; /* Añadir más margen para separar del footer */
+}
 
-  
+.type-item {
+  padding: 10px;
+  border: 1px solid #FF0000; /* Rojo representativo de Pokémon */
+  border-radius: 10px;
+  text-align: center;
+  background-color: #FFF; /* Fondo blanco */
+  cursor: pointer;
+}
+
+.type-item:hover {
+  background-color: #FFEDED; /* Color de fondo al pasar el ratón */
+}

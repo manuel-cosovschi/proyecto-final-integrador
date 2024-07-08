@@ -1,8 +1,8 @@
 <div class="pokemon-list">
   <h2>Pokémon List</h2>
   <div class="pokemon-grid">
-    <div *ngFor="let pokemon of pokemons" (click)="showPokemonDetails(pokemon.name)" class="pokemon-item">
-      {{ pokemon.name }}
+    <div *ngFor="let pokemon of pokemons" class="pokemon-item">
+      <div class="pokemon-name">{{ pokemon.name }}</div>
       <button (click)="selectPokemon(pokemon)">Select</button>
     </div>
   </div>
@@ -15,11 +15,11 @@
   </div>
 
   <h2>Types</h2>
-  <ul>
-    <li *ngFor="let type of types" (click)="showTypeDetails(type.name)">
+  <div class="type-grid">
+    <div *ngFor="let type of types" class="type-item" (click)="showTypeDetails(type.name)">
       {{ type.name }}
-    </li>
-  </ul>
+    </div>
+  </div>
 
   <div *ngIf="typeDetails">
     <h3>Details for {{ typeDetails.name }}</h3>
@@ -35,6 +35,7 @@
     <img *ngIf="pokemonDetails && selectedPokemon.name === pokemonDetails.name" [src]="pokemonDetails.sprites.front_default" alt="{{ selectedPokemon.name }}">
   </div>
 </div>
+
 
 
 
