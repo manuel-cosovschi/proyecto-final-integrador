@@ -1,1 +1,40 @@
-<p>pokemon-list works!</p>
+<div class="pokemon-list">
+  <h2>Pokémon List</h2>
+  <ul>
+    <li *ngFor="let pokemon of pokemons" (click)="showPokemonDetails(pokemon.name)">
+      {{ pokemon.name }}
+      <button (click)="selectPokemon(pokemon)">Select</button>
+    </li>
+  </ul>
+
+  <div *ngIf="pokemonDetails">
+    <h3>Details for {{ pokemonDetails.name }}</h3>
+    <p>Height: {{ pokemonDetails.height }}</p>
+    <p>Weight: {{ pokemonDetails.weight }}</p>
+    <img [src]="pokemonDetails.sprites.front_default" alt="{{ pokemonDetails.name }}">
+  </div>
+
+  <h2>Types</h2>
+  <ul>
+    <li *ngFor="let type of types" (click)="showTypeDetails(type.name)">
+      {{ type.name }}
+    </li>
+  </ul>
+
+  <div *ngIf="typeDetails">
+    <h3>Details for {{ typeDetails.name }}</h3>
+    <p>Moves:</p>
+    <ul>
+      <li *ngFor="let move of typeDetails.moves">{{ move.name }}</li>
+    </ul>
+  </div>
+
+  <div *ngIf="selectedPokemon">
+    <h2>Selected Pokémon</h2>
+    <p>{{ selectedPokemon.name }}</p>
+    <img *ngIf="pokemonDetails && selectedPokemon.name === pokemonDetails.name" [src]="pokemonDetails.sprites.front_default" alt="{{ selectedPokemon.name }}">
+  </div>
+</div>
+
+
+  

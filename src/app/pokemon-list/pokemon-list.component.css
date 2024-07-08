@@ -1,0 +1,28 @@
+.pokemon-list {
+  width: 300px;
+  margin: 50px auto;
+}
+.pokemon-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+.pokemon-list li {
+  padding: 10px;
+  border-bottom: 1px solid #FF0000; /* Rojo representativo de Pokémon */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pokemon-list button {
+  background-color: #3B4CCA; /* Azul representativo de Pokémon */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.pokemon-list button:hover {
+  background-color: #2a2d9f; /* Azul más oscuro */
+}
+
+  
