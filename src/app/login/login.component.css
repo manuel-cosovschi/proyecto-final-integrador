@@ -1,11 +1,19 @@
 .login-container {
-    display: flex;
+    /* display: flex; */
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 60vh;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 form {
+    margin: auto;
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 5px;

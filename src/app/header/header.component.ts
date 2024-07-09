@@ -13,19 +13,12 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  showHeader: boolean = true;
   isLoggedIn: boolean = false;
   private subscription: Subscription;
 
   constructor(private router: Router, private auth: AuthService) {
     this.subscription = this.auth.isLoggedIn().subscribe(loggedIn => {
       this.isLoggedIn = loggedIn;
-      // if (this.isLoggedIn){
-      //   this.showHeader=true;
-      // }
-      // else{
-      //   this.showHeader=true;
-      // }
     })
   }
 
@@ -38,7 +31,6 @@ export class HeaderComponent {
   }
 
   logout() {
-    this.showHeader = false;
     this.auth.logout()
       .then(() => {
         console.log("El usuario se deslogueó de la página.");
@@ -50,7 +42,6 @@ export class HeaderComponent {
   login(){
     this.router.navigate(['login']);
   }
-
 }
 
 

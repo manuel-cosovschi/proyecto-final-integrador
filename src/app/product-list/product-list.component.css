@@ -6,6 +6,27 @@
   background-color: #f8f9fa;
 }
 
+/* Estilo para pantallas medianas */
+@media (max-width: 1200px) {
+  .product-list{
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas medianas */
+  }
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 800px) {
+  .product-list {
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+  }
+}
+
+/* Estilo para pantallas muy pequeñas (móviles) */
+@media (max-width: 600px) {
+  .product-list {
+    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+  }
+}
+
 .product-item {
   border: 1px solid #ccc;
   border-radius: 8px;
