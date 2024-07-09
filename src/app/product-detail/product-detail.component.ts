@@ -21,6 +21,10 @@ export class ProductDetailComponent implements OnInit {
       this.product = data;
     });
   }
+
+  buyProduct(): void {
+    alert('E-Commerce CAECE agradece su compra!');
+  }
 }
 
 
