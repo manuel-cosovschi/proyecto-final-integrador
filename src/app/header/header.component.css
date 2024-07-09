@@ -1,28 +1,53 @@
 nav {
-  background-color: #004080; 
-  color: white;
-  padding: 10px;
+  background-color: #004080; /* Azul marino */
+  padding: 15px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+nav ul {
+  list-style-type: none;
   margin: 0;
+  padding: 0;
   display: flex;
+  justify-content: center;
 }
 
-li {
-  margin-right: 20px;
+nav ul li {
+  margin: 0 15px;
 }
 
-a {
+nav ul li a {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-a:hover {
-  text-decoration: underline;
+nav ul li a:hover {
+  background-color: #0056b3; /* Un azul más claro para el hover */
 }
+
+nav ul li a[routerLinkActive] {
+  background-color: #003366; /* Un azul más oscuro para el link activo */
+}
+
+nav ul li a[routerLinkActive]:hover {
+  background-color: #0056b3; /* Mantiene el mismo color en hover para el link activo */
+}
+
+nav ul li a[routerLinkActive="active"] {
+  background-color: #002147; /* Azul más oscuro para el link activo */
+}
+
+nav ul li a[routerLinkActive="active"]:hover {
+  background-color: #004080; /* Azul original para el hover del link activo */
+}
+
+nav ul li a[routerLink] {
+  cursor: pointer;
+}
+
 
 
 

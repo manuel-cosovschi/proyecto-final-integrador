@@ -13,12 +13,12 @@ const routes: Routes = [
     ...canActivate(() => redirectUnauthorizedTo(['/login']))
   },
   { path: 'product/:id', component: ProductDetailComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'header', component: HeaderComponent },
-  { path: 'footer', component: FooterComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 export const APP_ROUTES_PROVIDER = provideRouter(routes);
+
+
 
 
 

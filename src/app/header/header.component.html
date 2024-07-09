@@ -1,4 +1,4 @@
-<nav>
+<nav *ngIf="showHeader">
   <ul>
     <li><a routerLink="/" (click)="goHome()">Home</a></li>
     <li><a routerLink="/product" (click)="goProducts()">Products</a></li>
