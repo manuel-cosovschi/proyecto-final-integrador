@@ -1,0 +1,14 @@
+.product-detail {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .product-image {
+    max-width: 300px;
+    margin-right: 20px;
+  }
+  
+  .product-details {
+    max-width: 600px;
+  }
+  
