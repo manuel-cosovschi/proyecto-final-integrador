@@ -1,7 +1,8 @@
 <nav *ngIf="showHeader">
   <ul>
-    <li><a routerLink="/" (click)="goHome()">Home</a></li>
-    <li><a routerLink="/product" (click)="goProducts()">Products</a></li>
-    <li><a routerLink="/login" (click)="logout()">Logout</a></li>
+    <li><a (click)="goHome()">Home</a></li>
+    <li><a (click)="goProducts()">Products</a></li>
+    <li><a *ngIf="isLoggedIn==true" (click)="logout()">Logout</a></li>
+    <li><a *ngIf="isLoggedIn==false" (click)="login()">Login</a></li>
   </ul>
 </nav>

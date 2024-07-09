@@ -3,6 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 import { AuthService } from '../services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -12,9 +13,21 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  showHeader = true;
+  showHeader: boolean = true;
+  isLoggedIn: boolean = false;
+  private subscription: Subscription;
 
-  constructor(private router: Router, private auth: AuthService) {}
+  constructor(private router: Router, private auth: AuthService) {
+    this.subscription = this.auth.isLoggedIn().subscribe(loggedIn => {
+      this.isLoggedIn = loggedIn;
+      // if (this.isLoggedIn){
+      //   this.showHeader=true;
+      // }
+      // else{
+      //   this.showHeader=true;
+      // }
+    })
+  }
 
   goHome() {
     this.router.navigate(['']);
@@ -32,6 +45,10 @@ export class HeaderComponent {
         this.router.navigate(['/login']);
       })
       .catch(error => console.log(error))
+  }
+
+  login(){
+    this.router.navigate(['login']);
   }
 
 }
