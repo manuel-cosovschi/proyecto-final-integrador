@@ -6,25 +6,26 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private baseUrl = 'https://pokeapi.co/api/v2';
+  private apiUrl = 'https://fakestoreapi.com/products';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getPokemons(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/pokemon`);
+  getProducts(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 
-  getPokemonDetails(name: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/pokemon/${name}`);
+  getProductById(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  getTypes(): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/type`);
+  getCategories(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/categories`);
   }
 
-  getTypeDetails(type: string): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/type/${type}`);
+  getProductsByCategory(category: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/category/${category}`);
   }
 }
+
 
 
