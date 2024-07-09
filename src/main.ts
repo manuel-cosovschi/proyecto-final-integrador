@@ -10,8 +10,19 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
 bootstrapApplication(AppComponent, {
   providers: [
     APP_ROUTES_PROVIDER,
-    importProvidersFrom(ReactiveFormsModule, HttpClientModule), provideFirebaseApp(() => initializeApp({"projectId":"proyecto-final-integrado-1fd94","appId":"1:487065198070:web:c9d4048e604f2679fcfbd7","storageBucket":"proyecto-final-integrado-1fd94.appspot.com","apiKey":"AIzaSyAdZO2MmWKmBBNOfdcEqT6opYTYmklcNbA","authDomain":"proyecto-final-integrado-1fd94.firebaseapp.com","messagingSenderId":"487065198070"})), provideAuth(() => getAuth())
-  ],
+    importProvidersFrom(ReactiveFormsModule, HttpClientModule), 
+    provideFirebaseApp(() => initializeApp({
+      "projectId": "proyecto-final-integrado-1fd94",
+      "appId": "1:487065198070:web:c9d4048e604f2679fcfbd7",
+      "storageBucket": "proyecto-final-integrado-1fd94.appspot.com",
+      "apiKey": "AIzaSyAdZO2MmWKmBBNOfdcEqT6opYTYmklcNbA",
+      "authDomain": "proyecto-final-integrado-1fd94.firebaseapp.com",
+      "messagingSenderId": "487065198070"
+    })), 
+    provideAuth(() => getAuth())
+  ]
 }).catch(err => console.error(err));
+
+
 
 
