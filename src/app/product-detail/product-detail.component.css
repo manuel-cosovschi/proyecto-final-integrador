@@ -1,14 +1,24 @@
 .product-detail {
-    display: flex;
-    padding: 20px;
-  }
-  
-  .product-image {
-    max-width: 300px;
-    margin-right: 20px;
-  }
-  
-  .product-details {
-    max-width: 600px;
-  }
+  display: flex;
+  padding: 20px;
+  background-color: #f8f9fa; 
+}
+
+.product-image {
+  max-width: 300px;
+  margin-right: 20px;
+}
+
+.product-details {
+  max-width: 600px;
+}
+
+.product-details h1 {
+  color: #004080; 
+}
+
+.product-details p {
+  color: #343a40; 
+}
+
   

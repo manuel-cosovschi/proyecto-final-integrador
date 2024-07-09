@@ -1,11 +1,16 @@
 footer {
-  background-color: #007bff;
+  background-color: #004080; /* Azul marino */
   color: white;
   text-align: center;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
+  padding: 20px 0;
+  position: relative;
   width: 100%;
+  bottom: 0;
+  margin-top: 40px; /* Espacio adicional antes del footer */
+}
+
+footer p {
+  margin: 0;
 }
 
 

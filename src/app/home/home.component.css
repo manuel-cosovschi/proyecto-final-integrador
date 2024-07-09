@@ -1,8 +1,16 @@
-.home-container {
+.home {
     text-align: center;
     padding: 50px;
-    background-color: #FFDE00; 
-    color: #3B4CCA; 
-}
+    background-color: #e9ecef; 
+  }
+  
+  .home h1 {
+    color: #004080; 
+  }
+  
+  .home p {
+    color: #343a40; 
+  }
+  
   
   
