@@ -1,0 +1,40 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px; 
+    width: 100%;
+}
+
+button {
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.message {
+    padding: 10px;
+    color: #fff;
+    background-color: rgb(62, 174, 37);
+    font-weight: bold;
+    text-align: center;
+    border: solid 1px rgb(45, 114, 34);
+    border-radius: 10px;
+}
+.success-message {
+    background-color: rgb(62, 174, 37);   
+    border: solid 1px rgb(45, 114, 34);
+}
+
+.error-message {
+    background-color: rgb(220, 25, 25);
+    border: solid 1px rgb(151, 27, 27);
+}

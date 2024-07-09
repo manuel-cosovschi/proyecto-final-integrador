@@ -1,1 +1,18 @@
-<p>login works!</p>
+<div class="login-container login">    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input [ngClass]="{'is-invalid': hasErrors('email','email') || hasErrors('email','required')}"  type="email" class="form-control" id="email" formControlName="email"> 
+            <div class="text-danger" *ngIf="hasErrors('email','email')">Email formato invalido</div>
+            <div class="text-danger" *ngIf="hasErrors('email','required')">Email requerido</div>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input [ngClass]="{'is-invalid': hasErrors('password','required')}" type="password" class="form-control" id="password" formControlName="password">
+            <div class="text-danger" *ngIf="hasErrors('password','required')">Contraseña requerida</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <div class="message success-message" *ngIf="loginSuccess">¡Login exitoso!</div>
+        <div class="message error-message" *ngIf="loginError">El email/contraseña son incorrectos.</div>
+    </form>
+</div> 
