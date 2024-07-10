@@ -6,24 +6,21 @@
   background-color: #f8f9fa;
 }
 
-/* Estilo para pantallas medianas */
 @media (max-width: 1200px) {
-  .product-list{
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas en pantallas medianas */
+  .product-list {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Estilo para pantallas pequeñas */
 @media (max-width: 800px) {
   .product-list {
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Estilo para pantallas muy pequeñas (móviles) */
 @media (max-width: 600px) {
   .product-list {
-    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    grid-template-columns: 1fr;
   }
 }
 
@@ -36,7 +33,8 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s;
-  height: 450px; /* Altura fija para todos los contenedores */
+  height: 450px;
+  padding: 10px;
 }
 
 .product-item:hover {
@@ -45,8 +43,8 @@
 
 .product-image {
   max-width: 100%;
-  height: 250px; /* Ajuste de altura para que la imagen entre completamente */
-  object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
+  height: 200px;
+  object-fit: contain;
   margin-bottom: 10px;
 }
 
@@ -55,6 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 10px 0;
 }
 
 .product-details h3 {
@@ -76,12 +75,33 @@ button {
   padding: 10px 20px;
   cursor: pointer;
   align-self: center;
-  margin-top: 10px; /* Añadir margen para separación */
-  margin-bottom: 10px; /* Añadir margen para separación */
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 button:hover {
   background-color: #00264d;
 }
+
+.filter-container {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-container label {
+  margin-right: 10px;
+}
+
+#category-select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+
+
+
 
 

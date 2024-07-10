@@ -6,24 +6,24 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  private apiUrl = 'https://fakestoreapi.com/products';
+  private apiUrl = 'https://fakestoreapi.com';
 
   constructor(private http: HttpClient) {}
 
-  getProducts(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
+  getProducts(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/products`);
+  }
+
+  getCategories(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.apiUrl}/products/categories`);
+  }
+
+  getProductsByCategory(category: string): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/products/category/${category}`);
   }
 
   getProductById(id: number): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/${id}`);
-  }
-
-  getCategories(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/categories`);
-  }
-
-  getProductsByCategory(category: string): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/category/${category}`);
+    return this.http.get<any>(`${this.apiUrl}/products/${id}`);
   }
 }
 
