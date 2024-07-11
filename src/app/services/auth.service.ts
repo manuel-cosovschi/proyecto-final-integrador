@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth , signInWithEmailAndPassword, signOut} from '@angular/fire/auth';
+import { Auth , onAuthStateChanged, signInWithEmailAndPassword, signOut} from '@angular/fire/auth';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -8,7 +8,15 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   private loggedIn = new BehaviorSubject<boolean>(false);
 
-  constructor( private auth: Auth) { }
+  constructor( private auth: Auth) {
+    onAuthStateChanged(this.auth, user => {
+      if (user) {
+        this.loggedIn.next(true); // Usuario autenticado
+      } else {
+        this.loggedIn.next(false); // Usuario no autenticado
+      }
+    });
+  }
 
   login({email,password}:any){
     this.loggedIn.next(true);
