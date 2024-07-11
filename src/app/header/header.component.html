@@ -2,9 +2,14 @@
   <ul>
     <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="goHome()">Home</a></li>
     <li><a routerLink="/products" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="goProducts()">Products</a></li>
-    <li><a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!isLoggedIn; else notLoggedIn" (click)="login()">Login</a></li>
-    <ng-template #notLoggedIn>
-      <li><a (click)="logout()">Logout</a></li>
-    </ng-template>
+    <li *ngIf="!isLoading">
+      <ng-container *ngIf="!isLoggedIn; else notLoggedIn">
+        <a routerLink="/login" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="login()">Login</a>
+      </ng-container>
+      <ng-template #notLoggedIn>
+        <a (click)="logout()">Logout</a>
+      </ng-template>
+    </li>
   </ul>
 </nav>
+
