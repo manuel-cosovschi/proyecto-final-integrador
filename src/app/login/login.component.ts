@@ -32,9 +32,9 @@ export class LoginComponent {
       .then(response => {
         this.loginSuccess=true;
         this.loginError=false;
+        console.log('Login exitoso!');
         console.log(response); 
-        this.router.navigate([''])
-
+        this.router.navigate(['']);
       })
       .catch(error => {
         this.loginError=true; 
